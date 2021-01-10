@@ -11,10 +11,10 @@
 ##### ROS distro: Noetic <br></br>
 
 ##### How it Wors?
-###### `$cd catkin_ws/src` <br></br>
-###### `$git clone https://github.com/Kucukcollu/four_dof_manipulator.git` <br></br>
-###### `$cd catkin_ws/` <br></br>
-###### `$catkin_make` <br></br>
+###### `$cd catkin_ws/src`
+###### `$git clone https://github.com/Kucukcollu/four_dof_manipulator.git`
+###### `$cd catkin_ws/`
+###### `$catkin_make`
 
 ###### Simulation on RViz
 ###### `$roslaunch four_dof_manipulator display.launch`<br></br>
