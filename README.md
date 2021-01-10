@@ -5,9 +5,8 @@
 
 ##### Project Members:
 ###### [Ali Aydın Küçükçöllü](mailto:kucukcollu@outlook.com)
-###### [Batuhan Yalçınkaya](batuhanyalcinkayayk@gmail.com)
-###### [Nurettin Uğur Alagaş](alaugurala@hotmail.com)<br></br>
-
+###### [Batuhan Yalçınkaya](mailto:batuhanyalcinkayayk@gmail.com)
+###### [Nurettin Uğur Alagaş](mailto:alaugurala@hotmail.com)<br></br>
 
 ##### ROS distro: Noetic <br></br>
 
