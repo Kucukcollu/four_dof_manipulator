@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="four_dof_manipulator">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0330941580739677 -0.199915714499144 -0.0238474252824564"
+        rpy="0 0 0" />
+      <mass
+        value="1.21592569506171" />
+      <inertia
+        ixx="0.00319394143397767"
+        ixy="6.5091653705339E-06"
+        ixz="5.00849983752121E-05"
+        iyy="0.00517355396442031"
+        iyz="-2.59154797593508E-06"
+        izz="0.00752990865416603" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_dof_manipulator/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_dof_manipulator/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="first_link">
+    <inertial>
+      <origin
+        xyz="-7.40726924242097E-16 5.55111512312578E-17 -0.0544923827293373"
+        rpy="0 0 0" />
+      <mass
+        value="1.20713988278658" />
+      <inertia
+        ixx="0.00387509235916713"
+        ixy="1.08751366378478E-10"
+        ixz="2.91710497028995E-17"
+        iyy="0.00304586202042799"
+        iyz="1.8833505378577E-18"
+        izz="0.00589439778201493" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_dof_manipulator/meshes/first_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_dof_manipulator/meshes/first_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="revolute">
+    <origin
+      xyz="-0.002088 -0.2 -0.0041908"
+      rpy="-3.1416 0 0.011071" />
+    <parent
+      link="base_link" />
+    <child
+      link="first_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="2" />
+  </joint>
+  <link
+    name="second_link">
+    <inertial>
+      <origin
+        xyz="0.122656869389677 -0.000401462272982121 0.0686321634800344"
+        rpy="0 0 0" />
+      <mass
+        value="0.564197355185099" />
+      <inertia
+        ixx="0.00247734722871887"
+        ixy="4.32451514645973E-06"
+        ixz="1.43966218295342E-06"
+        iyy="0.00767638543625201"
+        iyz="-1.39190385070962E-07"
+        izz="0.0053992835651082" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_dof_manipulator/meshes/second_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_dof_manipulator/meshes/second_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0 -0.068 -0.117"
+      rpy="-1.5708 1.231 0" />
+    <parent
+      link="first_link" />
+    <child
+      link="second_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.0944"
+      upper="0.5236"
+      effort="0"
+      velocity="2" />
+  </joint>
+  <link
+    name="third_link">
+    <inertial>
+      <origin
+        xyz="0.0894833695145261 0.00033318543735994 0.0616705943939753"
+        rpy="0 0 0" />
+      <mass
+        value="0.341491453338833" />
+      <inertia
+        ixx="0.0011223536458998"
+        ixy="-8.94838519701008E-07"
+        ixz="4.50772424468454E-07"
+        iyy="0.00260413334203537"
+        iyz="-3.4625862551018E-06"
+        izz="0.00161078736660313" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_dof_manipulator/meshes/third_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_dof_manipulator/meshes/third_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="revolute">
+    <origin
+      xyz="0.3 0 0.124"
+      rpy="-3.1416 0 -1.5068" />
+    <parent
+      link="second_link" />
+    <child
+      link="third_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.8397"
+      upper="-2.0944"
+      effort="0"
+      velocity="2" />
+  </joint>
+  <link
+    name="last_link">
+    <inertial>
+      <origin
+        xyz="-0.0560197170203963 -0.00180758809624348 0.0376902988339165"
+        rpy="0 0 0" />
+      <mass
+        value="0.124172205504631" />
+      <inertia
+        ixx="0.000158990596339611"
+        ixy="5.05924702086737E-07"
+        ixz="-2.31032106428921E-06"
+        iyy="0.000280825917306382"
+        iyz="8.62409861420771E-06"
+        izz="0.000143221751156104" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_dof_manipulator/meshes/last_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://four_dof_manipulator/meshes/last_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4"
+    type="revolute">
+    <origin
+      xyz="0.2 0 0"
+      rpy="0.645832947767902 1.5707963267949 0" />
+    <parent
+      link="third_link" />
+    <child
+      link="last_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0.34907"
+      upper="1.0472"
+      effort="0"
+      velocity="2" />
+  </joint>
+</robot>
