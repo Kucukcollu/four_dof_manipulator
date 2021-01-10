@@ -4,7 +4,7 @@
 
 
 ##### Project Members:
-###### [Ali Aydın Küçükçöllü](kucukcollu@outlook.com)
+###### [Ali Aydın Küçükçöllü](mailto:kucukcollu@outlook.com)
 ###### [Batuhan Yalçınkaya](batuhanyalcinkayayk@gmail.com)
 ###### [Nurettin Uğur Alagaş](alaugurala@hotmail.com)<br></br>
 
