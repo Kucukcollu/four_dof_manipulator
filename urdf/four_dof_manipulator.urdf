@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
-     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
-     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot
-  name="four_dof_manipulator">
-  <link
-    name="base_link">
+
+<robot name="four_dof_manipulator">
+
+  <!--Fixed the robot to the ground-->
+  <link name="world" />
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+
+  <!--Base link-->
+  <link name="base_link">
     <inertial>
       <origin
         xyz="-0.0330941580739677 -0.199915714499144 -0.0238474252824564"
@@ -25,27 +30,24 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://four_dof_manipulator/meshes/base_link.STL" />
+        <mesh filename="package://four_dof_manipulator/meshes/base_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
     <collision>
       <origin
-        xyz="0 0 0"
+        xyz="0 0 1"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://four_dof_manipulator/meshes/base_link.STL" />
+        <mesh filename="package://four_dof_manipulator/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
-  <link
-    name="first_link">
+  
+  <!--First Link-->
+  <link name="first_link">
     <inertial>
       <origin
         xyz="-7.40726924242097E-16 5.55111512312578E-17 -0.0544923827293373"
@@ -65,13 +67,10 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://four_dof_manipulator/meshes/first_link.STL" />
+        <mesh filename="package://four_dof_manipulator/meshes/first_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
     <collision>
@@ -79,17 +78,16 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://four_dof_manipulator/meshes/first_link.STL" />
+        <mesh filename="package://four_dof_manipulator/meshes/first_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="joint_1"
-    type="revolute">
+  
+  <!--Joint 1-->
+  <joint name="joint_1" type="revolute">
     <origin
       xyz="-0.002088 -0.2 -0.0041908"
-      rpy="-3.1416 0 0.011071" />
+      rpy="-3.1416 0 -3.1416" />
     <parent
       link="base_link" />
     <child
@@ -99,11 +97,22 @@
     <limit
       lower="-1.5708"
       upper="1.5708"
-      effort="0"
+      effort="500"
       velocity="2" />
   </joint>
-  <link
-    name="second_link">
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_1">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <!--Second link-->
+  <link name="second_link">
     <inertial>
       <origin
         xyz="0.122656869389677 -0.000401462272982121 0.0686321634800344"
@@ -123,13 +132,10 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://four_dof_manipulator/meshes/second_link.STL" />
+        <mesh filename="package://four_dof_manipulator/meshes/second_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
     <collision>
@@ -137,14 +143,13 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://four_dof_manipulator/meshes/second_link.STL" />
+        <mesh filename="package://four_dof_manipulator/meshes/second_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="joint_2"
-    type="revolute">
+  
+  <!--Joint 2-->
+  <joint name="joint_2" type="revolute">
     <origin
       xyz="0 -0.068 -0.117"
       rpy="-1.5708 1.231 0" />
@@ -155,13 +160,24 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-2.0944"
-      upper="0.5236"
-      effort="0"
+      lower="-1.2217304764"
+      upper="1.9198621772"
+      effort="500"
       velocity="2" />
   </joint>
-  <link
-    name="third_link">
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_2">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <!--Third link-->
+  <link name="third_link">
     <inertial>
       <origin
         xyz="0.0894833695145261 0.00033318543735994 0.0616705943939753"
@@ -181,13 +197,10 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://four_dof_manipulator/meshes/third_link.STL" />
+        <mesh filename="package://four_dof_manipulator/meshes/third_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
     <collision>
@@ -195,14 +208,13 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://four_dof_manipulator/meshes/third_link.STL" />
+        <mesh filename="package://four_dof_manipulator/meshes/third_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="joint_3"
-    type="revolute">
+  
+  <!--Third Joint-->
+  <joint name="joint_3" type="revolute">
     <origin
       xyz="0.3 0 0.124"
       rpy="-3.1416 0 -1.5068" />
@@ -213,13 +225,24 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-3.8397"
-      upper="-2.0944"
-      effort="0"
+      lower="-1.9198621772"
+      upper="-6.6322511576"
+      effort="500"
       velocity="2" />
   </joint>
-  <link
-    name="last_link">
+  <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_3">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <!--Fourth link-->
+  <link name="last_link">
     <inertial>
       <origin
         xyz="-0.0560197170203963 -0.00180758809624348 0.0376902988339165"
@@ -242,10 +265,8 @@
         <mesh
           filename="package://four_dof_manipulator/meshes/last_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="">
+        <color rgba="0.5 0.5 0.5 1"/>
       </material>
     </visual>
     <collision>
@@ -253,14 +274,13 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://four_dof_manipulator/meshes/last_link.STL" />
+        <mesh filename="package://four_dof_manipulator/meshes/last_link.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="joint_4"
-    type="revolute">
+  
+  <!--Fourth link-->
+  <joint name="joint_4" type="revolute">
     <origin
       xyz="0.2 0 0"
       rpy="0.645832947767902 1.5707963267949 0" />
@@ -271,9 +291,28 @@
     <axis
       xyz="1 0 0" />
     <limit
-      lower="0.34907"
-      upper="1.0472"
-      effort="0"
+      lower="0.6981317008"
+      upper="-2.4434609528"
+      effort="500"
       velocity="2" />
   </joint>
+  <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_4">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <!--Gazebo simulator part-->
+  <gazebo>
+    <plugin name="control" filename="libgazebo_ros_control.so"/>
+    <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+      <jointname>joint_1,joint_2,joint_3,joint_4</jointname>
+    </plugin>
+  </gazebo>
+
 </robot>
