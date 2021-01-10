@@ -22,4 +22,8 @@
 ###### Simulation on Gazebo
 ###### `$roslaunch four_dof_manipulator gazebo.launch`
 
+###### demo with controller
+
 ###### `$rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["joint_1","joint_2","joint_3","joint_4"],points:[{positions: [-1.0,1.8,-5.8,-2.4],time_from_start:[1,0]}]}' -1`
+
+###### `$rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["joint_1","joint_2","joint_3","joint_4"],points:[{positions: [-1.5,1.15,-1.8,0.60],time_from_start:[1,0]}]}' -1`
