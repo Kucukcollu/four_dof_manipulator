@@ -2,12 +2,21 @@
 
 #### Graduation Project 2020-2021: Simulation of Serial and Parallel Manipulators in ROS
 
+
 ##### Project Members:
 ###### Ali Aydın Küçükçöllü
 ###### Batuhan Yalçınkaya
 ###### Nurettin Uğur Alagaş
 
+
+
+
+
+
 ##### ROS distro: Noetic
+
+
+
 
 ##### How it Wors?
 `$cd catkin_ws/src´
