@@ -24,6 +24,12 @@
 
 ###### demo with controller
 
-###### `$rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["joint_1","joint_2","joint_3","joint_4"],points:[{positions: [-1.0,1.8,-5.8,-2.4],time_from_start:[1,0]}]}' -1`
+###### `$rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["joint_1","joint_2","joint_3","joint_4"],points:[{positions: [0.98,0.83,-3.62,0.19],time_from_start:[1,0]}]}' -1`
 
-###### `$rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["joint_1","joint_2","joint_3","joint_4"],points:[{positions: [-1.5,1.15,-1.8,0.60],time_from_start:[1,0]}]}' -1`
+###### `$rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["joint_1","joint_2","joint_3","joint_4"],points:[{positions: [-0.58,1.27,-3.85,-0.44],time_from_start:[1,0]}]}' -1`
+
+###### `$rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["joint_1","joint_2","joint_3","joint_4"],points:[{positions: [-1.08,0.68,-3.46,0.70],time_from_start:[1,0]}]}' -1`
+
+###### `$rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["joint_1","joint_2","joint_3","joint_4"],points:[{positions: [0.60,-0.63,-6.28,0.13],time_from_start:[1,0]}]}' -1`
+
+###### `$rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["joint_1","joint_2","joint_3","joint_4"],points:[{positions: [-0.44,-0.47,-6.28,-0.86],time_from_start:[1,0]}]}' -1`
