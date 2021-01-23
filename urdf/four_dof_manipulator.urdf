@@ -95,8 +95,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-1.5708"
-      upper="1.5708"
+      lower="-1.5707963268"
+      upper="1.5707963268"
       effort="500"
       velocity="2" />
   </joint>
@@ -213,7 +213,7 @@
     </collision>
   </link>
   
-  <!--Third Joint-->
+  <!--Joint 3-->
   <joint name="joint_3" type="revolute">
     <origin
       xyz="0.3 0 0.124"
@@ -225,8 +225,8 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-6.6322511576"
-      upper="-1.9198621772"
+      lower="-6.2831853072"
+      upper="-2.2689280276"
       effort="500"
       velocity="2" />
   </joint>
@@ -279,7 +279,7 @@
     </collision>
   </link>
   
-  <!--Fourth joint-->
+  <!--Joint 4-->
   <joint name="joint_4" type="revolute">
     <origin
       xyz="0.2 0 0"
