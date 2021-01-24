@@ -21,6 +21,8 @@
 ###### Simulation on RViz
 ###### `$roslaunch four_dof_manipulator display.launch`<br></br>
 
+![](https://github.com/Kucukcollu/four_dof_manipulator/blob/master/adds/rviz-Trim.gif)
+
 ###### Simulation on Gazebo
 ###### `$roslaunch four_dof_manipulator gazebo.launch`
 
