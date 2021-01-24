@@ -10,7 +10,7 @@
 
 ##### ROS distro: Noetic <br></br>
 
-##### How it Wors?
+##### How it Works?
 ###### `$cd catkin_ws/src`
 ###### `$git clone https://github.com/Kucukcollu/four_dof_manipulator.git`
 ###### `$cd catkin_ws/`
