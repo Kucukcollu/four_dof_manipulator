@@ -1,9 +1,6 @@
-## four_dof_manipulator
+### four_dof_manipulator : Graduation Project 2020-2021: Simulation of Serial and Parallel Manipulators in ROS<br></br>
 
 ![four_dof_manipulator](https://github.com/Kucukcollu/four_dof_manipulator/blob/master/adds/1.png)
-
-#### Graduation Project 2020-2021: Simulation of Serial and Parallel Manipulators in ROS<br></br>
-
 
 ##### Project Members:
 ###### [Ali Aydın Küçükçöllü](mailto:kucukcollu@outlook.com)
