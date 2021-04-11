@@ -2,8 +2,9 @@
 
   <param name="robot_description" textfile="$(find four_dof_manipulator)/urdf/four_dof_manipulator.urdf"/>
 
-  <include
-    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find four_dof_manipulator)/worlds/environment.world"/>
+  </include>
   <node
     name="tf_footprint_base"
     pkg="tf"
@@ -15,6 +16,7 @@
     type="spawn_model"
     args="-file $(find four_dof_manipulator)/urdf/four_dof_manipulator.urdf -urdf -model four_dof_manipulator"
     output="screen" />
+
   <node
     name="fake_joint_calibration"
     pkg="rostopic"

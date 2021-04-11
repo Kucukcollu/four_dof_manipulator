@@ -4,11 +4,6 @@
 
   <!--Fixed the robot to the ground-->
   <link name="world" />
-  <joint name="fixed" type="fixed">
-    <parent link="world"/>
-    <child link="base_link"/>
-  </joint>
-
   <!--Base link-->
   <link name="base_link">
     <inertial>
@@ -45,6 +40,12 @@
       </geometry>
     </collision>
   </link>
+
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.068" rpy="0.0 0.0 0.0" />
+  </joint>
   
   <!--First Link-->
   <link name="first_link">
