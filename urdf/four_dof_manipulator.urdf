@@ -2,8 +2,29 @@
 
 <robot name="four_dof_manipulator">
 
-  <!--Fixed the robot to the ground-->
+  <!--Fixed the table to the ground(world)-->
   <link name="world" />
+
+  <!-- Table -->
+  <link name="table">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 -0.2 0"/>
+      <geometry>
+        <box size="0.6 0.4 0.9"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.75 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <!-- World-Table joint-->
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="table"/>
+    <origin xyz="0.0 0.0 0.450" rpy="0.0 0.0 0.0" />
+  </joint>
+
   <!--Base link-->
   <link name="base_link">
     <inertial>
@@ -41,10 +62,11 @@
     </collision>
   </link>
 
-  <joint name="fixed" type="fixed">
-    <parent link="world"/>
+  <!--Table-Base Joint-->
+  <joint name="table_joint" type="fixed">
+    <parent link="table"/>
     <child link="base_link"/>
-    <origin xyz="0.0 0.0 0.068" rpy="0.0 0.0 0.0" />
+    <origin xyz="0.0 0.0 0.518" rpy="0.0 0.0 0.0" />
   </joint>
   
   <!--First Link-->
