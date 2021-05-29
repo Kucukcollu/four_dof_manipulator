@@ -1,7 +1,7 @@
 <launch>
     <include file="$(find four_dof_manipulator)/launch/gazebo.launch"/>
-    <include file="$(find four_dof_manipulator_moveit)/launch/move_group.launch"/>
-    <include file="$(find four_dof_manipulator_moveit)/launch/moveit_rviz.launch">
+    <include file="$(find four_dof_manipulator_motion_planning)/launch/move_group.launch"/>
+    <include file="$(find four_dof_manipulator_motion_planning)/launch/moveit_rviz.launch">
         <param name="config" value="True"/>
     </include>
 </launch>
