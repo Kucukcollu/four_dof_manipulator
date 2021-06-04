@@ -23,9 +23,11 @@
     type="rostopic"
     args="pub /calibrated std_msgs/Bool true" />
   
-  <node name="controller_spawner" pkg="controller_manager" type="spawner" args="arm_controller"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" args="arm_controller hand_controller"/>
   <rosparam file="$(find four_dof_manipulator)/yaml/jtc_controller.yaml" command="load"/>
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>
 
+  <!--rosparam file="$(find four_dof_manipulator)/yaml/gains.yaml" command="load"/-->
 
+  
 </launch>
