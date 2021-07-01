@@ -18,13 +18,14 @@
     </visual>
   </link>
 
-  <!-- World-Table joint-->
+  <!-- world-table fixed joint-->
   <joint name="fixed" type="fixed">
     <parent link="world"/>
     <child link="table"/>
     <origin xyz="0.0 0.0 0.450" rpy="0.0 0.0 0.0" />
   </joint>
 
+  <!--Base Link-->
   <link name="base_link">
     <inertial>
       <origin
@@ -65,7 +66,7 @@
     </collision>
   </link>
   
-  <!--Table-Base Joint-->
+  <!--table-base fixed joint-->
   <joint name="table_joint" type="fixed">
     <parent link="table"/>
     <child link="base_link"/>
@@ -78,6 +79,7 @@
     <origin xyz="0.0 0.0 0.518" rpy="0.0 0.0 0.0" />
   </joint-->
 
+  <!--Link 1-->
   <link
     name="first_link">
     <inertial>
@@ -119,6 +121,7 @@
     </collision>
   </link>
   
+  <!--First Joint-->
   <joint
     name="joint_1"
     type="revolute">
@@ -148,6 +151,7 @@
     </actuator>
   </transmission>
   
+  <!--Link 2-->
   <link
     name="second_link">
     <inertial>
@@ -189,6 +193,7 @@
     </collision>
   </link>
   
+  <!--Second 2-->
   <joint
     name="joint_2"
     type="revolute">
@@ -218,7 +223,7 @@
     </actuator>
   </transmission>
 
-
+  <!--Link 3-->
   <link
     name="third_link">
     <inertial>
@@ -260,6 +265,7 @@
     </collision>
   </link>
   
+  <!--Third joint-->
   <joint
     name="joint_3"
     type="revolute">
@@ -289,6 +295,7 @@
     </actuator>
   </transmission>
 
+  <!--Link 4-->
   <link
     name="fourth_link">
     <inertial>
@@ -330,6 +337,7 @@
     </collision>
   </link>
   
+  <!--Fourth joint-->
   <joint
     name="joint_4"
     type="revolute">
@@ -359,6 +367,7 @@
     </actuator>
   </transmission>
 
+  <!--Finger 1-->
   <link
     name="finger_1">
     <inertial>
@@ -400,6 +409,7 @@
     </collision>
   </link>
 
+  <!--First Finger Joint-->
   <joint
     name="finger1"
     type="revolute">
@@ -429,6 +439,7 @@
     </actuator>
   </transmission>
   
+  <!--Finger 2-->
   <link
     name="finger_2">
     <inertial>
@@ -470,6 +481,7 @@
     </collision>
   </link>
   
+  <!--Second Finger Joint-->  
   <joint
     name="finger2"
     type="revolute">
@@ -499,11 +511,27 @@
     </actuator>
   </transmission>
 
-  <!--Gazebo simulator part-->
+  <!--Gazebo Simulator Part-->
   <gazebo>
     <plugin name="control" filename="libgazebo_ros_control.so"/>
     <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
       <jointname>joint_1,joint_2,joint_3,joint_4,finger1,finger2</jointname>
+    </plugin>
+    <!--Grasp Plugin-->
+    <plugin name="gazebo_grasp_fix" filename="libgazebo_grasp_fix.so">
+      <arm>
+        <arm_name>four_dof_manipulator</arm_name>
+        <palm_link>fourth_link</palm_link>
+        <gripper_link>finger_1</gripper_link>
+        <gripper_link>finger_2</gripper_link>
+      </arm>
+      <forces_angle_tolerance>100</forces_angle_tolerance>
+      <update_rate>4</update_rate>
+      <grip_count_threshold>4</grip_count_threshold>
+      <max_grip_count>8</max_grip_count>
+      <release_tolerance>0.008</release_tolerance>
+      <disable_collisions_on_attach>false</disable_collisions_on_attach>
+      <contact_topic>__default_topic__</contact_topic>
     </plugin>
   </gazebo>
 
