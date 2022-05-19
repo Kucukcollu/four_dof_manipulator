@@ -39,3 +39,4 @@
 ###### `$rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["joint_1","joint_2","joint_3","joint_4"],points:[{positions: [0.60,-0.63,-6.28,0.13],time_from_start:[1,0]}]}' -1`
 
 ###### `$rostopic pub /arm_controller/command trajectory_msgs/JointTrajectory '{joint_names: ["joint_1","joint_2","joint_3","joint_4"],points:[{positions: [-0.44,-0.47,-6.28,-0.86],time_from_start:[1,0]}]}' -1`
+
